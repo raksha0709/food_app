@@ -1,20 +1,18 @@
-import About from "./Components/AboutUs";
-import {BrowserRouter,Routes,Route} from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
-import Menu from "./Components/Menu";
-function App(){
-  return(
-  <>
-  <BrowserRouter>
-  <Navbar/>
-  <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/menu" element={<Menu/>}/>
-    <Route path="/about" element={<About/>}/>
-  </Routes>
-  </BrowserRouter>
-  </>
-  );
+import React from 'react';
+import './Components/style.css';
+import Meal from './Components/Meal';
+import Recipe from './Components/Recipe';
+import {Route,Routes} from 'react-router-dom';
+
+function App() {
+  return (
+    <>
+   <Routes>
+      <Route  path="/" element={<Meal/>}/>
+      <Route exact path="/:recipeId" element={<Recipe/>}/>
+      </Routes>
+    </>
+  )
 }
+
 export default App;
